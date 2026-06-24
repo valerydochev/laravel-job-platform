@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Robot avatar">
+    <defs>
+        <linearGradient id="avatar-bg" x1="16" y1="10" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#22d3ee"/>
+            <stop offset=".55" stop-color="#6366f1"/>
+            <stop offset="1" stop-color="#ec4899"/>
+        </linearGradient>
+    </defs>
+    <rect width="128" height="128" rx="64" fill="url(#avatar-bg)"/>
+    <rect x="30" y="42" width="68" height="56" rx="18" fill="#f8fafc"/>
+    <rect x="42" y="56" width="16" height="16" rx="8" fill="#0f172a"/>
+    <rect x="70" y="56" width="16" height="16" rx="8" fill="#0f172a"/>
+    <path d="M50 84h28" stroke="#0f172a" stroke-width="6" stroke-linecap="round"/>
+    <path d="M64 42V27" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="64" cy="24" r="7" fill="#f8fafc"/>
+    <path d="M24 65h10M94 65h10" stroke="#f8fafc" stroke-width="8" stroke-linecap="round"/>
+</svg>
