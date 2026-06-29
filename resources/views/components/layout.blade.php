@@ -89,9 +89,9 @@
             </el-disclosure>
         </nav>
 
-        <header class="bg-white shadow-sm">
+        <header class="relative z-10 border-b border-gray-200 bg-white shadow-[0_2px_6px_rgba(0,0,0,0.12)]">
             <div class="px-4 py-8 sm:px-6 lg:px-8">
-                <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
+                <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading ?? 'My Website' }}</h1>
             </div>
         </header>
 
