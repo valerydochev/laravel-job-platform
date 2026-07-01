@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('employer_id');
             $table->string('title');
             $table->string('salary');
-            $table->text('details')->nullable();
             $table->timestamps();
         });
     }
