@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../views/**/*.blade.php';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
@@ -8,4 +11,81 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 
     --color-laracasts: rgb(50, 138, 241);
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+.dark body,
+.dark .min-h-full {
+    background: #0f172a;
+}
+
+.dark header {
+    border-color: #334155;
+    background: #111827;
+}
+
+.dark main {
+    background: #0f172a;
+}
+
+.dark .bg-white {
+    background-color: #111827;
+}
+
+.dark .bg-blue-50 {
+    background-color: #172554;
+}
+
+.dark .bg-red-50 {
+    background-color: #450a0a;
+}
+
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-gray-200 {
+    background-color: #1f2937;
+}
+
+.dark .border-gray-200,
+.dark .border-blue-100,
+.dark .border-red-100 {
+    border-color: #334155;
+}
+
+.dark .border-red-100 {
+    border-color: #7f1d1d;
+}
+
+.dark .text-gray-950,
+.dark .text-gray-900,
+.dark .text-gray-800 {
+    color: #f8fafc;
+}
+
+.dark .text-gray-700,
+.dark .text-gray-600 {
+    color: #cbd5e1;
+}
+
+.dark .text-gray-500 {
+    color: #94a3b8;
+}
+
+.dark .text-red-600 {
+    color: #fca5a5;
+}
+
+.dark input,
+.dark textarea {
+    border-color: #475569;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+    color: #94a3b8;
 }
