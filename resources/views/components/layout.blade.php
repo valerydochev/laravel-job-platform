@@ -31,26 +31,10 @@
 
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
-                            <button type="button"
-                                class="relative rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                                <span class="absolute -inset-1.5"></span>
-                                <span class="sr-only">View notifications</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                    data-slot="icon" aria-hidden="true" class="size-6">
-                                    <path
-                                        d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                            <el-dropdown class="relative ml-3">
-                                <button
-                                    class="relative flex max-w-xs items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                                    <span class="absolute -inset-1.5"></span>
-                                    <span class="sr-only">Open user menu</span>
-                                    <img src="{{ asset('images/robot-avatar.svg') }}" alt="Robot avatar"
-                                        class="size-8 rounded-full outline -outline-offset-1 outline-white/10">
-                                </button>
-                            </el-dropdown>
+                            @guest
+                                <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                                <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                            @endguest
                         </div>
                     </div>
 
@@ -80,26 +64,11 @@
                     <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
                 </div>
                 <div class="border-t border-white/10 pt-4 pb-3">
-                    <div class="flex items-center px-5">
-                        <div class="shrink-0">
-                            <img src="{{ asset('images/robot-avatar.svg') }}" alt="Robot avatar"
-                                class="size-10 rounded-full outline -outline-offset-1 outline-white/10">
-                        </div>
-                        <div class="ml-3">
-                            <div class="text-base/5 font-medium text-white">Valeri D.</div>
-                            <div class="text-sm font-medium text-gray-400">valeri@example.com</div>
-                        </div>
-                        <button type="button"
-                            class="relative ml-auto shrink-0 rounded-full p-1 text-gray-400 hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-indigo-500">
-                            <span class="absolute -inset-1.5"></span>
-                            <span class="sr-only">View notifications</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                                data-slot="icon" aria-hidden="true" class="size-6">
-                                <path
-                                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
+                    <div class="space-y-1 px-2 sm:px-3">
+                        @guest
+                            <x-nav-link href="/login" :active="request()->is('login')">Log In</x-nav-link>
+                            <x-nav-link href="/register" :active="request()->is('register')">Register</x-nav-link>
+                        @endguest
                     </div>
                 </div>
             </el-disclosure>
@@ -108,7 +77,7 @@
         <header class="relative z-10 border-b border-gray-200 bg-white shadow-[0_2px_6px_rgba(0,0,0,0.12)]">
             <div class="flex w-full items-center justify-between px-8 py-6">
                 <h1 class="text-3xl font-bold tracking-tight text-gray-900">
-                    Job Listings
+                    {{ $heading ?? 'Job Listings' }}
                 </h1>
 
                 <x-button href="/jobs/create">Create Job</x-button>
