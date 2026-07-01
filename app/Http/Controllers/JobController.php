@@ -33,13 +33,18 @@ class JobController extends Controller
     {
         request()->validate([
             'title' => ['required', 'min:3'],
-            'salary' => 'required'
+            'salary' => 'required',
+            'details' => ['nullable', 'string'],
         ]);
 
-        $job = Job::create([
+        $employer = request()->user()->employer()->firstOrCreate([], [
+            'name' => trim(request()->user()->first_name . ' ' . request()->user()->last_name),
+        ]);
+
+        $job = $employer->jobs()->create([
             'title' => request('title'),
             'salary' => request('salary'),
-            'employer_id' => 1
+            'details' => request('details'),
         ]);
 
         Mail::to($job->employer->user)->queue(
@@ -60,12 +65,14 @@ class JobController extends Controller
 
         request()->validate([
             'title' => ['required', 'min:3'],
-            'salary' => 'required'
+            'salary' => 'required',
+            'details' => ['nullable', 'string'],
         ]);
 
         $job->update([
             'title' => request('title'),
             'salary' => request('salary'),
+            'details' => request('details'),
         ]);
 
         return redirect('/jobs/' . $job->id);
