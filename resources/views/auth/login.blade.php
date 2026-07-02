@@ -50,8 +50,12 @@
                 </x-form-field>
             </div>
 
-            <div class="mt-8 flex items-center justify-end gap-x-6 border-t border-gray-200 pt-6">
+            <div class="mt-8 flex flex-wrap items-center justify-end gap-4 border-t border-gray-200 pt-6">
                 <a href="/" class="text-sm/6 font-semibold text-gray-700 hover:text-gray-950">Cancel</a>
+                <a href="/register"
+                    class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm/6 font-semibold text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-2 focus:outline-offset-2 focus:outline-gray-300">
+                    Register
+                </a>
                 <x-form-button>Log In</x-form-button>
             </div>
         </form>
@@ -62,6 +66,10 @@
             <p class="mt-3 text-sm leading-6 text-gray-700">
                 After logging in, jobs created from your account can be edited or deleted by you.
             </p>
+            <a href="/register"
+                class="mt-6 inline-flex items-center justify-center rounded-lg bg-white px-4 py-2 text-sm/6 font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-blue-200 hover:bg-blue-50">
+                Create an account
+            </a>
         </aside>
     </div>
 
